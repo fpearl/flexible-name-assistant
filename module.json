@@ -1,22 +1,22 @@
 {
   "id": "flexible-name-assistant",
   "title": "Flexible Name Assistant",
-  "description": "A script to dynamically assign names to Foundry VTT tokens based on customizable categories.",
-  "version": "1.1.0",
+  "description": "A module to dynamically assign names to tokens based on customizable categories.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Frederic Pearl",
+      "discord": "your-discord-id#1234",
+      "url": "https://github.com/fpearl/flexible-name-assistant"
+    }
+  ],
+  "esmodules": ["module.js"],
+  "styles": [],
+  "url": "https://github.com/fpearl/flexible-name-assistant",
+  "manifest": "https://fpearl.github.io/flexible-name-assistant/module.json",
+  "download": "https://fpearl.github.io/flexible-name-assistant/flexible-name-assistant.zip",
   "compatibility": {
     "minimum": "12",
     "verified": "12"
-  },
-  "scripts": [
-    "module.js"
-  ],
-  "styles": [],
-  "languages": [],
-  "packs": [],
-  "esmodules": [],
-  "license": "license.txt",
-  "readme": "README.md",
-  "icon": "7179aa2c2fcfa43ce84c536e7f67c28ecbd49e1728a3db4ccc8f28be2b06eee9.png",
-  "manifest": "https://fpearl.github.io/flexible-name-assistant/module.json",
-  "download": "https://fpearl.github.io/flexible-name-assistant/flexible-name-assistant.zip"
+  }
 }
