@@ -2,10 +2,21 @@
   "categories": {
     "Eldari": {
       "names": [
+        // Female Elven Names
         "Aerendil", "Amara", "Anariel", "Aranel", "Aurelia", "Caladwen", "Celandine", "Elenna",
         "Elyssia", "Faelivrin", "Galadriel", "Ithilwen", "Isilme", "Lorien", "Melian", "Nimloth",
-        "Sylvara", "Thalassa", "Vaeloria", "Yavanna", "Aerion", "Althion", "Ardion", "Calion",
-        "Eryndor", "Faelar", "Nithion", "Ralion", "Varis", "Zeryth"
+        "Sylvara", "Thalassa", "Vaeloria", "Yavanna", "Aerlith", "Alathea", "Althaea", "Alyssin",
+        "Amariel", "Anastriana", "Anduriel", "Anwen", "Ardath", "Arlenna", "Aryndra", "Auralie",
+        "Bellatrix", "Caelynn", "Celestine", "Cymbelene", "Daelynn", "Delyth", "Eirlys", "Elbereth",
+        "Elariel", "Eldalote", "Elenia", "Elladari", "Elyndra", "Faela", "Faelanna", "Galadrielle",
+        "Haleth", "Ilmariel", "Imbriel", "Inethiel", "Irieth", "Isilina", "Kaelith", "Kaelyssa",
+        "Kallista", "Laerwen", "Lierin", "Lirien", "Lithien", "Lorelei", "Maerwyn", "Miriel",
+        "Nesalyn", "Nymeria", "Oliviel", "Quenyariel", "Reniel", "Rhianna", "Selendri", "Shalana",
+        "Sindra", "Sylveth", "Talindra", "Thessalia", "Tindra", "Velatha", "Vilya", "Xenytha",
+        "Ylathia", "Zarael",
+
+        // Ambiguous Elven Names
+        "Aerion", "Althion", "Ardion", "Calion", "Eryndor", "Faelar", "Nithion", "Ralion", "Varis", "Zeryth"
       ],
       "titles": [
         "Operative", "Captain", "Starweaver", "Mooncaller", "Lightbearer"
