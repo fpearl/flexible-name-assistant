@@ -7,7 +7,7 @@
   "minimumCoreVersion": "10",
   "compatibleCoreVersion": "11",
   "manifest": "https://fpearl.github.io/flexible-name-assistant/module.json",
-  "download": "https://fpearl.github.io/flexible-name-assistant/script.js",
+  "download": "https://fpearl.github.io/flexible-name-assistant/flexible-name-assistant.js",
   "license": "Custom License - Flexible Name Assistant Module License v1.0",
   "scripts": [
     "script.js"
