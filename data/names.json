@@ -18,33 +18,35 @@
         // Ambiguous Elven Names
         "Aerion", "Althion", "Ardion", "Calion", "Eryndor", "Faelar", "Nithion", "Ralion", "Varis", "Zeryth"
       ],
-      "titles": [
-        "Operative", "Captain", "Starweaver", "Mooncaller", "Lightbearer"
-      ]
+      "titles": ["Operative", "Captain", "Starweaver", "Mooncaller", "Lightbearer"]
     },
     "Wastelander": {
       "names": [
-        "Rustclaw", "Shadehound", "Grease Fang", "Mudcrawler", "Ironhide", "Junkrat", "Scrapjaw", "Rotfang"
+        "Ashclaw", "Bonecrusher", "Chainfang", "Cinderjack", "Dirtclaw", "Dustwhisper", "Emberjaw", 
+        "Flamegrit", "Gasburner", "Gravelord", "Ironspike", "Junkrider", "Knucklebone", "Mudgrinder", 
+        "Nitrojack", "Pistonshade", "Rustedclaw", "Screechfang", "Scrapknight", "Shadowwaste", 
+        "Skullsmoke", "Sootwalker", "Steelburn", "Thunderjaw", "Tirefang", "Treadripper", 
+        "Twilightburn", "Venomspike", "Warclaw", "Wildsmoke", "Wraithgrit", "Axelash", "Blackforge", 
+        "Blazebite", "Burnshard", "Cageclaw", "Chainreaver", "Clutchshard", "Crimsonflame", "Cuttershade", 
+        "Darkgrit", "Deathburn", "Firegrinder", "Flamecall", "Gasburn", "Grimefang", "Gritreaper", 
+        "Grungeclaw", "Hellsaw", "Ironfist", "Junklash", "Madspike", "Nightburn", "Oilshard", "Pitflame", 
+        "Radjaw", "Rageclaw", "Roughfang", "Rustgear", "Sandsplitter", "Savageclaw", "Shadowlash", 
+        "Shardsmoke", "Smokegrit", "Sparkfang", "Spikejaw", "Steamlash", "Steelshade", "Tireflame", 
+        "Venomburn", "Wargrind", "Wastereaver", "Wreckjaw", "Ashfang", "Blastshade", "Bonejack", 
+        "Chainsplitter", "Chromeclaw", "Crushgrit", "Daggerjaw", "Deathclutch", "Emberlash", 
+        "Grindflame", "Ironknight", "Junkspike", "Rustjack", "Scrapegrind", "Skullfang", "Spineclaw"
       ],
-      "titles": [
-        "Scraplord", "Scavenger", "Warlord", "Pit Boss", "Road King"
-      ]
+      "titles": ["Scraplord", "Scavenger", "Warlord", "Pit Boss", "Road King"]
     },
     "Undead": {
       "names": [
-        "Hauntcaller", "Wraithcaller", "Sorrowbane", "Void Herald", "Graveborn", "Dreadshade", "Bonecrush", "Specterveil"
+        "Hauntcaller", "Wraithcaller", "Sorrowbane", "Void Herald", "Bone Whisperer", "Grave Warden", 
+        "Spectral Knight", "Mournshade", "Skullweaver", "Corpsebinder", "Dread Keeper", "Soul Shaper", 
+        "Pale Sovereign", "Necroshade", "Ghoul Shepherd", "Plague Weaver", "Shadow Harbinger", 
+        "Deathwatcher", "Ravenlord", "Fleshcarver", "Cryptsinger", "Phantomshade", "Eternal Howl", 
+        "Blood Warden", "Bonekeeper"
       ],
-      "titles": [
-        "Bone King", "Lich Lord", "Spectral Warden", "Dread Overlord", "Crypt Keeper"
-      ]
-    },
-    "CustomCategory": {
-      "names": [
-        "CustomName1", "CustomName2", "CustomName3", "CustomName4"
-      ],
-      "titles": [
-        "CustomTitle1", "CustomTitle2"
-      ]
+      "titles": ["Bone King", "Lich Lord", "Spectral Warden", "Dread Overlord", "Crypt Keeper"]
     }
   }
 }
