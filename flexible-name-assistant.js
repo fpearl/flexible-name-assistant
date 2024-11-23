@@ -1,3 +1,31 @@
+/*!
+ * Flexible Name Assistant
+ * Version: 1.1.0
+ * Author: Frederic Pearl
+ * License: Custom License - Flexible Name Assistant Module License v1.0
+ *
+ * This script dynamically assigns names to tokens in Foundry VTT based on customizable categories.
+ * Includes an optional toggle for preserving command titles.
+ */
+
+// Hook into Foundry when the game is ready
+Hooks.on("ready", () => {
+    console.log("Flexible Name Assistant module loaded. Version: 1.1.0");
+
+    // Add a button to the Token HUD for easy access
+    Hooks.on("renderTokenHUD", (app, html, data) => {
+        const button = $(`<div class="control-icon" title="Assign Names">
+            <i class="fas fa-edit"></i>
+        </div>`);
+        button.click(() => {
+            // Call the script when the button is clicked
+            assignNamesFromApi();
+        });
+        html.find(".col.right").append(button);
+    });
+});
+
+// Simulated API Call
 async function fetchNamesAndTitlesFromApi(category) {
     const mockResponse = {
         categories: {
@@ -30,10 +58,7 @@ async function fetchNamesAndTitlesFromApi(category) {
 }
 
 function getRandomName(names, usedNames) {
-    // Filter out used names
     const availableNames = names.filter(name => !usedNames.has(name));
-
-    // Return a random name if available, or reuse names from the full list
     if (availableNames.length) {
         const randomIndex = Math.floor(Math.random() * availableNames.length);
         return availableNames[randomIndex];
@@ -48,7 +73,7 @@ async function assignNamesFromApi() {
     const categories = ["Eldari", "Wastelander", "Undead"];
 
     let content = `
-        <p>Select a naming category:</p>
+        <p>Select a naming category and toggle title preservation:</p>
         <form>
             <div class="form-group">
                 <label for="name-category">Name Category</label>
@@ -56,17 +81,22 @@ async function assignNamesFromApi() {
                     ${categories.map(cat => `<option value="${cat}">${cat}</option>`).join('')}
                 </select>
             </div>
+            <div class="form-group">
+                <label for="title-preservation">Preserve Titles</label>
+                <input type="checkbox" id="title-preservation" name="preserveTitles" checked />
+            </div>
         </form>
     `;
 
     new Dialog({
-        title: "Select Name Category",
+        title: "Flexible Name Assignment",
         content: content,
         buttons: {
             confirm: {
                 label: "Assign Names",
                 callback: async (html) => {
                     const selectedCategory = html.find("#name-category").val();
+                    const preserveTitles = html.find("#title-preservation").is(":checked");
                     const data = await fetchNamesAndTitlesFromApi(selectedCategory);
 
                     const names = [...data.names];
@@ -80,16 +110,15 @@ async function assignNamesFromApi() {
 
                     canvas.tokens.controlled.forEach(token => {
                         let currentName = token.name;
-                        let existingTitle = titles.find(title => currentName.includes(title));
+                        let existingTitle = preserveTitles
+                            ? titles.find(title => currentName.includes(title))
+                            : null;
 
-                        // Get a random unique name
                         let newName = getRandomName(names, usedNames);
                         usedNames.add(newName);
 
-                        // Construct the final name
                         const finalName = existingTitle ? `${existingTitle} ${newName}` : newName;
 
-                        // Update the token's name
                         token.document.update({
                             name: finalName,
                             displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS
@@ -105,6 +134,3 @@ async function assignNamesFromApi() {
         }
     }).render(true);
 }
-
-// Run the script
-assignNamesFromApi();
