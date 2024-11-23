@@ -8,6 +8,6 @@
   "compatibleCoreVersion": "11",
   "url": "https://github.com/<your-username>/foundry-module",
   "manifest": "https://fpearl>.github.io/flexible-name-assistant/module.json",
-  "download": "https://fpearl.github.io/flexible-name-assistant/flexible-name-assistant.zip",
+  "download": "https://fpearl.github.io/flexible-name-assistant/flexible-name-assistant.js",
   "license": "Custom License - Flexible Name Assistant Module License v1.0"
 }
