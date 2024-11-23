@@ -9,5 +9,5 @@
   "url": "https://github.com/<your-username>/foundry-module",
   "manifest": "https://<your-username>.github.io/foundry-module/module.json",
   "download": "https://<your-username>.github.io/foundry-module/flexible-name-assistant.zip",
-  "license": "MIT"
+  "license": "Custom License - Flexible Name Assistant Module License v1.0"
 }
