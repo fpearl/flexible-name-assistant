@@ -7,22 +7,16 @@
     "minimum": "10",
     "verified": "11"
   },
-  "authors": [
-    {
-      "name": "Frederic Pearl",
-      "email": "",
-      "url": "https://github.com/fpearl"
-    }
+  "scripts": [
+    "module.js"
   ],
-  "esmodules": ["module.js"],
-  "media": [
-    {
-      "type": "icon",
-      "url": "7179aa2c2fcfa43ce84c536e7f67c28ecbd49e1728a3db4ccc8f28be2b06eee9.png"
-    }
-  ],
+  "styles": [],
+  "languages": [],
+  "packs": [],
+  "esmodules": [],
+  "license": "license.txt",
+  "readme": "README.md",
+  "icon": "7179aa2c2fcfa43ce84c536e7f67c28ecbd49e1728a3db4ccc8f28be2b06eee9.png",
   "manifest": "https://fpearl.github.io/flexible-name-assistant/module.json",
-  "download": "https://fpearl.github.io/flexible-name-assistant/flexible-name-assistant.zip",
-  "readme": "https://fpearl.github.io/flexible-name-assistant/README.md",
-  "license": "https://fpearl.github.io/flexible-name-assistant/LICENSE.txt"
+  "download": "https://fpearl.github.io/flexible-name-assistant/flexible-name-assistant.zip"
 }
