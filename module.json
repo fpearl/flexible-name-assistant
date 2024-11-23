@@ -2,7 +2,7 @@
   "name": "flexible-name-assistant",
   "title": "Flexible Name Assistant",
   "description": "A versatile module for Foundry VTT that dynamically assigns names to tokens based on customizable categories.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Frederic Pearl",
   "minimumCoreVersion": "10",
   "compatibleCoreVersion": "11",
