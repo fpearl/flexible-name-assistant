@@ -7,7 +7,7 @@
   "minimumCoreVersion": "10",
   "compatibleCoreVersion": "11",
   "url": "https://github.com/<your-username>/foundry-module",
-  "manifest": "https://<your-username>.github.io/foundry-module/module.json",
-  "download": "https://<your-username>.github.io/foundry-module/flexible-name-assistant.zip",
+  "manifest": "https://fpearl>.github.io/flexible-name-assistant/module.json",
+  "download": "https://fpearl.github.io/flexible-name-assistant/flexible-name-assistant.zip",
   "license": "Custom License - Flexible Name Assistant Module License v1.0"
 }
