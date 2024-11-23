@@ -9,5 +9,13 @@
   "url": "https://github.com/fpearl/foundry-vtt-scripts",
   "manifest": "https://fpearl.github.io/foundry-vtt-scripts/flexible-name-assistant/module.json",
   "download": "https://fpearl.github.io/foundry-vtt-scripts/flexible-name-assistant/flexible-name-assistant.zip",
-  "license": "Custom License - Flexible Name Assistant Module License v1.0"
+  "license": "Custom License - Flexible Name Assistant Module License v1.0",
+  "scripts": [
+    "flexible-name-assistant/script.js"
+  ],
+  "styles": [],
+  "esmodules": [],
+  "languages": [],
+  "packs": [],
+  "socket": false
 }
