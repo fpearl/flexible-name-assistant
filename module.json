@@ -2,7 +2,7 @@
   "id": "flexible-name-assistant",
   "title": "Flexible Name Assistant",
   "description": "A module to dynamically assign names to tokens based on customizable categories.",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "authors": [
     {
       "name": "Frederic Pearl",
