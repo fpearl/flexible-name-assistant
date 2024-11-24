@@ -1,6 +1,6 @@
 /*!
  * Flexible Name Assistant
- * Version: 1.1.0
+ * Version: 1.2.1
  * Author: Frederic Pearl
  * License: Custom License - Flexible Name Assistant Module License v1.0
  *
@@ -10,7 +10,7 @@
 
 // Hook into Foundry when the game is ready
 Hooks.on("ready", () => {
-    console.log("Flexible Name Assistant module loaded. Version: 1.1.0");
+    console.log("Flexible Name Assistant module loaded. Version: 1.2.1");
 
     // Add a button to the Token HUD for easy access
     Hooks.on("renderTokenHUD", (app, html, data) => {
@@ -25,36 +25,25 @@ Hooks.on("ready", () => {
     });
 });
 
-// Simulated API Call
-async function fetchNamesAndTitlesFromApi(category) {
-    const mockResponse = {
-        categories: {
-            Eldari: {
-                names: [
-                    "Aerendil", "Amara", "Anariel", "Aranel", "Aurelia", "Caladwen", "Celandine", "Elenna",
-                    "Elyssia", "Faelivrin", "Galadriel", "Ithilwen", "Isilme", "Lorien", "Melian", "Nimloth",
-                    "Sylvara", "Thalassa", "Vaeloria", "Yavanna", "Aerion", "Althion", "Ardion", "Calion",
-                    "Eryndor", "Faelar", "Nithion", "Ralion", "Varis", "Zeryth"
-                ],
-                titles: ["Operative", "Captain", "Starweaver", "Mooncaller", "Lightbearer"]
-            },
-            Wastelander: {
-                names: ["Rustclaw", "Shadehound", "Grease Fang", "Mudcrawler"],
-                titles: ["Scraplord", "Scavenger", "Warlord", "Pit Boss", "Road King"]
-            },
-            Undead: {
-                names: ["Hauntcaller", "Wraithcaller", "Sorrowbane", "Void Herald"],
-                titles: ["Bone King", "Lich Lord", "Spectral Warden", "Dread Overlord", "Crypt Keeper"]
-            }
+// Fetches categories and data from the hosted JSON file
+async function fetchCategoriesAndData() {
+    const filePath = "https://fpearl.github.io/flexible-name-assistant/data/names.json"; // Hosted JSON URL
+    try {
+        // Fetch the JSON data
+        const response = await fetch(filePath);
+        if (!response.ok) throw new Error(`Failed to load configuration file: ${response.statusText}`);
+        const data = await response.json();
+
+        if (!data.categories || Object.keys(data.categories).length === 0) {
+            throw new Error("No categories found in the configuration file.");
         }
-    };
 
-    if (!mockResponse.categories[category]) {
-        console.error(`Category ${category} not found in response!`);
-        return { names: [], titles: [] };
+        return data.categories;
+    } catch (error) {
+        console.error("Error loading categories and data from JSON file:", error);
+        ui.notifications.error("An error occurred while fetching categories. Check the console for details.");
+        return null;
     }
-
-    return mockResponse.categories[category];
 }
 
 function getRandomName(names, usedNames) {
@@ -70,15 +59,17 @@ function getRandomName(names, usedNames) {
 }
 
 async function assignNamesFromApi() {
-    const categories = ["Eldari", "Wastelander", "Undead"];
+    const categories = await fetchCategoriesAndData();
+    if (!categories) return; // Abort if no categories were loaded
 
+    // Build the dialog content dynamically based on categories
     let content = `
         <p>Select a naming category and toggle title preservation:</p>
         <form>
             <div class="form-group">
                 <label for="name-category">Name Category</label>
                 <select id="name-category" name="category">
-                    ${categories.map(cat => `<option value="${cat}">${cat}</option>`).join('')}
+                    ${Object.keys(categories).map(cat => `<option value="${cat}">${cat}</option>`).join('')}
                 </select>
             </div>
             <div class="form-group">
@@ -88,6 +79,7 @@ async function assignNamesFromApi() {
         </form>
     `;
 
+    // Render the dialog
     new Dialog({
         title: "Flexible Name Assignment",
         content: content,
@@ -97,16 +89,16 @@ async function assignNamesFromApi() {
                 callback: async (html) => {
                     const selectedCategory = html.find("#name-category").val();
                     const preserveTitles = html.find("#title-preservation").is(":checked");
-                    const data = await fetchNamesAndTitlesFromApi(selectedCategory);
 
+                    if (!categories[selectedCategory]) {
+                        ui.notifications.warn(`No data found for the selected category: ${selectedCategory}.`);
+                        return;
+                    }
+
+                    const data = categories[selectedCategory];
                     const names = [...data.names];
                     const titles = data.titles || [];
                     const usedNames = new Set();
-
-                    if (!names.length) {
-                        ui.notifications.warn(`No names found for the selected category: ${selectedCategory}.`);
-                        return;
-                    }
 
                     canvas.tokens.controlled.forEach(token => {
                         let currentName = token.name;
