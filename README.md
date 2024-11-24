@@ -1,6 +1,6 @@
 Flexible Name Assistant for Foundry VTT
 
-Version 1.0
+Version 1.2
 Copyright © 2024 Frederic Pearl. All Rights Reserved.
 
 Overview
@@ -19,7 +19,7 @@ How to Use
 	1.	Install the Module:
 Paste the Manifest URL into Foundry’s Module Installer:
 
-https://fpearl.github.io/foundry-vtt-scripts/module.json
+https://fpearl.github.io/flexible-name-assistant/module.json
 
 
 	2.	Activate the Module:
